@@ -1,3 +1,4 @@
+import random
 matriz = []
 
 def mostrar_diagonal_principal():
@@ -13,7 +14,6 @@ def mostrar_diagonal_secundaria():
         for j in range(len(matriz) - i - 1):
             print("        ", end="")
         print("{:8.2f}".format(matriz[i][len(matriz) - i - 1]))
-
 
 def llenar_mostrar_matriz():
     global matriz
@@ -32,10 +32,7 @@ def llenar_mostrar_matriz():
     for i in range(filas):
         matriz.append([])
         for j in range(columnas):
-            valor = int(input("Fila {}, Columna {}: ".format(i+1, j+1)))
-            while valor < 100 or valor > 300:
-                print("El valor debe estar entre 100 y 300.")
-                valor = int(input("Fila {}, Columna {}: ".format(i+1, j+1)))
+            valor = random.randint(100, 300)
             matriz[i].append(valor)
 
     print()
